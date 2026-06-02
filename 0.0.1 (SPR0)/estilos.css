@@ -1,0 +1,420 @@
+/* =========================================
+   Estilos Globales
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* =========================================
+   Cabecera
+   ========================================= */
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cabecera img {
+    height: 50px; /* Controla el tamaño del logo */
+    width: auto;
+    object-fit: contain;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.navegacion a:hover {
+    color: #0056b3;
+}
+
+/* Ajuste por si el icono de usuario es una imagen */
+.perfil-usuario img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* =========================================
+   Seccion Principal (Hero)
+   ========================================= */
+.seccion-principal {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 400px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.imagen-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.contenedor-busqueda {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-principal {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.formulario-busqueda {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-busqueda label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+}
+
+.entrada-texto {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.boton-buscar {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100px;
+    margin-top: 10px;
+}
+
+/* =========================================
+   Hoteles Destacados
+   ========================================= */
+.hoteles-destacados {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.hoteles-destacados h2 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.tarjeta-hotel {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 32%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.imagen-hotel {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.contenido-tarjeta {
+    padding: 15px;
+}
+
+.contenido-tarjeta h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.estrellas {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.duracion {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.ubicacion {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* Ajuste para el icono del pin de ubicación */
+.ubicacion img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* =========================================
+   Beneficios
+   ========================================= */
+.beneficios {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-weight: normal;
+    margin-bottom: 30px;
+    color: #555;
+    text-align: left;
+}
+
+.contenedor-beneficios {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.item-beneficio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icono-beneficio {
+    margin-bottom: 15px;
+}
+
+/* Ajuste para los iconos grandes de beneficios */
+.icono-beneficio img,
+.item-beneficio img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.item-beneficio p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* =========================================
+   Seccion Nosotros
+   ========================================= */
+.seccion-nosotros {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f7f9;
+    border-radius: 15px;
+    padding: 40px;
+    gap: 30px;
+}
+
+.informacion-nosotros {
+    flex: 1;
+}
+
+.informacion-nosotros h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.informacion-nosotros p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.mapa-nosotros {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imagen-mapa {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   Pie de pagina
+   ========================================= */
+.pie-pagina {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 40px;
+}
+
+.columna-pie {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Ajuste por si el logo principal se repite en el footer */
+.informacion-marca img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.informacion-marca .nombres,
+.informacion-marca .derechos {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.columna-pie h4 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.columna-pie a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.columna-pie a:hover {
+    color: #000;
+}
+
+.iconos-redes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Ajuste para los iconos de redes sociales */
+.iconos-redes img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/*Adaptación para Tablet (Máximo 1024px)*/
+@media (max-width: 1024px) {
+    .cabecera {
+        padding: 15px 20px;
+    }
+
+    .seccion-principal {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .contenedor-tarjetas {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tarjeta-hotel {
+        width: 45%;
+    }
+}
+
+/*Adaptación para Móvil (Máximo 768px)*/
+@media (max-width: 768px) {
+    .cabecera {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .navegacion {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .contenedor-busqueda {
+        padding: 20px;
+        align-items: center;
+    }
+    .titulo-principal {
+        font-size: 20px;
+        text-align: center;
+    }
+    .formulario-busqueda {
+        width: 100%; 
+    }
+    .contenedor-tarjetas, 
+    .contenedor-beneficios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta-hotel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .seccion-nosotros {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .pie-pagina {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+    .iconos-redes {
+        justify-content: center;
+    }
+}
