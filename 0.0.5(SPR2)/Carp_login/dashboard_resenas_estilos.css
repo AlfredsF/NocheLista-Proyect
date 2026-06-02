@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cabecera img {
+    height: 50px; /* Controla el tamaño del logo */
+    width: auto;
+    object-fit: contain;
+}
+/* poner el nombre del usuario en el medio de la img*/
+.Nombre_user h5{
+    text-align: center;
+    color: #333333;
+}
+
+/* main */
+.dashboard{
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Pestallas de informacion,reservas,etc*/
+.Selecciones{
+    width: 220px;
+    margin:100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.pestañas{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 220px;
+    padding: 20px;
+    box-shadow: 4px 6px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.pestañas:hover{
+    box-shadow: 4px 6px 10px 0px rgba(12, 167, 167, 0.3);
+}
+
+.pestaña_cerrar_sesion{
+    background: rgb(224, 113, 113);
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 220px;
+    padding: 20px;
+    box-shadow: 4px 6px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.pestaña_cerrar_sesion:hover{
+    background: rgb(243, 23, 23) ;
+}
+
+a{
+    text-decoration: none;
+    color: #333333;
+}
+
+.contenido{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.titulo input{
+    padding: 12px;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* carta de resenas*/
+.card{
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reseña{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hotel-info{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hotel-info img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.usuario{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.usuario img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* =========================
+   ESTADOS
+========================= */
+
+.estado{
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.aprobado{
+    background: #d8ffd8;
+    color: #1d7a1d;
+}
+
+.pendiente{
+    background: #fff2cc;
+    color: #946200;
+}
+
+
+.acciones{
+    display: flex;
+    gap: 15px;
+}
+
+.btn{
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.aprobar{
+    background: #4CAF50;
+    color: white;
+}
+
+.aprobar:hover{
+    background: #3d9441;
+}
+
+.eliminar{
+    background: #e74c3c;
+    color: white;
+}
+
+.eliminar:hover{
+    background: #c0392b;
+}
+
+
+@media(max-width: 768px){
+
+    .cabecera{
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .dashboard{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Selecciones{
+        width: 100%;
+        margin: 20px 0;
+        align-items: center;
+    }
+
+    .pestañas,
+    .pestaña_cerrar_sesion{
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .contenido{
+        width: 100%;
+    }
+
+    .titulo{
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .titulo input{
+        width: 100%;
+    }
+
+    .reseña{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .hotel-info{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .usuario{
+        width: 100%;
+    }
+
+    .acciones{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .btn{
+        width: 100%;
+    }
+}

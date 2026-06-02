@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* =========================================
+   Cabecera
+   ========================================= */
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cabecera img {
+    height: 50px; /* Controla el tamaño del logo */
+    width: auto;
+    object-fit: contain;
+}
+/* poner el nombre del usuario en el medio de la img*/
+.Nombre_user h5{
+    text-align: center;
+    color: #333333;
+}
+
+/* main */
+.dashboard{
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Pestallas de informacion,reservas,etc*/
+.Selecciones{
+    width: 220px;
+    margin:100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.pestañas{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 320px;
+    padding: 20px;
+    box-shadow: 4px 6px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.pestañas:hover{
+    box-shadow: 4px 6px 10px 0px rgba(12, 167, 167, 0.3);
+}
+
+.pestaña_cerrar_sesion{
+    background: rgb(224, 113, 113);
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 320px;
+    padding: 20px;
+    box-shadow: 4px 6px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.pestaña_cerrar_sesion:hover{
+    background: rgb(243, 23, 23) ;
+}
+
+a{
+    text-decoration: none;
+    color: #333333;
+}
+/* pone la info del user en el centro */
+.seleccion-center{
+    background: rgb(252, 251, 251);
+    border-radius: 20px;
+    height: 100%;
+    margin: 0px 100px ;
+    display: flex;
+    flex-direction: column;
+    gap: 50px ;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+.Info_User{
+    margin: 0 100px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.Info_User input{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 4px 6px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.seleccion-center button{
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.seleccion-center button:hover{
+    background: rgb(94, 195, 94);
+    box-shadow: 4px 6px 10px 0px rgba(0, 0, 0, 0.3);
+}
+/* Imagen user */
+
+.perfil{
+    width: 280px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.perfil img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover; /*ajusta una imagen*/
+    margin-bottom: 20px; /*separacion entre img*/
+}
+
+.comentarios p{
+    line-height: 1.6; /*separacion entre parrafos */
+}
+
+@media (max-width: 768px){
+
+    .cabecera{
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .dashboard{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Selecciones{
+        width: 100%;
+        margin: 20px 0;
+        align-items: center;
+    }
+
+    .pestañas,
+    .pestaña_cerrar_sesion{
+        width: 100%;
+    }
+
+    .seleccion-center{
+        margin: 0;
+        width: 95%;
+    }
+
+    .Info_User{
+        width: 100%;
+        margin: 0;
+    }
+
+    .perfil{
+        width: 100%;
+    }
+
+    .perfil img{
+        width: 140px;
+        height: 140px;
+    }
+}
