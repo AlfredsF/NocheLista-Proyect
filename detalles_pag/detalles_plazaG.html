@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Plaza Grande - NocheLista</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="logo"><a href="../index.html"><img src="../imagenes/logo.jpeg" alt="Logo"></a></div>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">&#9776;</label>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../hoteles.html">Hoteles</a></li>
+                <li><a href="../mis-reservas.html">Mis Reservas</a></li>
+                <li><a href="../index.html#app">App</a></li>
+                <li><a href="../index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="icono-usuario">
+            <a href="../Carp_login/login.html"><img src="../imagenes/perfil.png" alt="Perfil" style="border-radius:50%;"></a>
+            <span id="userGreeting" style="color:#333;margin-left:8px;font-size:14px;"></span>
+        </div>
+    </header>
+    <main class="container my-5">
+        <div id="loadingDetalle" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p class="mt-2 text-muted">Cargando...</p>
+        </div>
+        <div id="errorDetalle" class="text-center py-5" style="display:none;">
+            <p class="text-danger" id="errorMensaje"></p>
+        </div>
+        <div id="hotelContent" style="display:none;">
+            <div class="row mb-4">
+                <div class="col-12 text-center text-md-start">
+                    <h1 class="fw-bold text-uppercase" id="hotelNombre">Hotel Plaza Grande (Quito Centro)</h1>
+                </div>
+            </div>
+            <div class="row mb-5 align-items-center">
+                <div class="col-md-7 mb-4 mb-md-0">
+                    <img id="hotelImagen" src="../imagenes/hotel_plazaG.avif" class="img-fluid rounded shadow" style="width:100%;height:400px;object-fit:cover;" alt="Hotel Plaza Grande">
+                </div>
+                <div class="col-md-5 d-flex flex-column align-items-center">
+                    <h5 class="mb-4">Elige tu reserva</h5>
+                    <div class="w-75 mb-3 p-3 bg-light rounded shadow-sm text-center">
+                        <p class="mb-1 text-muted small">Precio por noche</p>
+                        <p class="fw-bold text-success fs-4 mb-0">$<span id="precioBase">180</span></p>
+                    </div>
+                    <select id="tipoHabitacion" class="form-select mb-3 shadow-sm w-75">
+                        <option value="" disabled>Selecciona una habitación</option>
+                    </select>
+                    <input type="date" id="fechaEntrada" class="form-control mb-3 shadow-sm w-75 p-2" style="cursor:pointer;">
+                    <input type="date" id="fechaSalida" class="form-control mb-3 shadow-sm w-75 p-2" style="cursor:pointer;">
+                    <div id="totalPrecio" class="w-75 text-center mb-3 text-muted small"></div>
+                    <div class="d-flex gap-3 w-100 justify-content-center">
+                        <button id="btnReservar" class="btn btn-success fw-bold px-4">RESERVAR</button>
+                        <a href="https://wa.me/0000000000" target="_blank" class="btn btn-outline-success fw-bold px-3">HABLA CON EL GERENTE</a>
+                    </div>
+                    <div id="reservaMensaje" class="mt-3 text-center fw-bold"></div>
+                </div>
+            </div>
+            <div class="row mb-4 mt-5">
+                <div class="col-12 text-center">
+                    <h3 class="fw-normal" style="border-bottom:1px solid #333;display:inline-block;padding-bottom:5px;">Descripción</h3>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-4 mb-3"><p class="text-muted" style="text-align:justify;">Ubicado en el corazón del centro histórico, el Hotel Plaza Grande es el epítome del lujo clásico. Originalmente la casa de uno de los fundadores de la ciudad, este hotel boutique ofrece suites que combinan la majestuosidad colonial con el confort moderno de cinco estrellas.</p></div>
+                <div class="col-md-4 mb-3"><p class="text-muted" style="text-align:justify;">Sus ventanas ofrecen vistas incomparables a la Plaza de la Independencia, el Palacio Presidencial y la Catedral Metropolitana. Cada rincón del edificio está cuidadosamente decorado con detalles de época, transportando a los huéspedes a la era dorada de la capital.</p></div>
+                <div class="col-md-4 mb-3"><p class="text-muted" style="text-align:justify;">Además de su arquitectura impecable, el hotel es famoso por su gastronomía. Sus restaurantes de alta cocina ofrecen platos que fusionan las tradiciones culinarias ecuatorianas con técnicas internacionales, haciendo de cada comida una experiencia inolvidable.</p></div>
+            </div>
+            <div class="row mt-5" id="otrosHoteles"></div>
+        </div>
+    </main>
+    <footer class="pie-pagina">
+        <div class="columna-pie informacion-marca">
+            <img src="../imagenes/logo.jpeg" alt="Logo"><p class="nombres">Alfredo Fuel, Merchan, Sanches</p><p class="derechos">2026 Derechos Reservados</p>
+        </div>
+        <div class="columna-pie"><h4>Servicio al Cliente</h4><a href="#">Contáctanos</a><a href="#">Ayuda/FAQ</a><a href="#">Soporte experto</a></div>
+        <div class="columna-pie"><h4>Legal</h4><a href="#">Términos y Condiciones</a><a href="#">Política de Privacidad</a></div>
+        <div class="columna-pie redes-sociales">
+            <div class="iconos-redes">
+                <a href="https://wa.me/0000000000" target="_blank"><img src="../imagenes/whatsapp.png" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="../imagenes/instagram.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="../imagenes/yotube.png" alt="YouTube"></a>
+                <a href="https://twitter.com/" target="_blank"><img src="../imagenes/x.png" alt="Twitter"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="../imagenes/facebook.png" alt="Facebook"></a>
+                <a href="https://www.pinterest.com/" target="_blank"><img src="../imagenes/printerest.png" alt="Pinterest"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/utils.js"></script>
+<script>
+updateNavGreeting();
+const HOTEL_ID = 'plazaG';
+const fechaEntrada = document.getElementById('fechaEntrada');
+const fechaSalida = document.getElementById('fechaSalida');
+const tipoHabitacion = document.getElementById('tipoHabitacion');
+const totalPrecio = document.getElementById('totalPrecio');
+const btnReservar = document.getElementById('btnReservar');
+const mensaje = document.getElementById('reservaMensaje');
+
+async function loadHotel() {
+    try {
+        const data = await apiFetch(`/hoteles/${HOTEL_ID}/`);
+        document.getElementById('loadingDetalle').style.display = 'none';
+        document.getElementById('hotelContent').style.display = 'block';
+        const habs = data.habitaciones || [];
+        tipoHabitacion.innerHTML = '';
+        habs.forEach(h => {
+            tipoHabitacion.innerHTML += `<option value="${h.id}" data-precio="${h.precio_por_noche}" data-tipo="${h.tipo}">${h.nombre} - $${parseFloat(h.precio_por_noche).toFixed(2)}/noche</option>`;
+        });
+        renderOtrosHoteles(HOTEL_ID);
+    } catch (e) {
+        document.getElementById('loadingDetalle').style.display = 'none';
+        document.getElementById('hotelContent').style.display = 'block';
+        document.getElementById('errorDetalle').style.display = 'none';
+    }
+}
+
+async function renderOtrosHoteles(excludeId) {
+    const container = document.getElementById('otrosHoteles');
+    try {
+        const all = await apiFetch('/hoteles/');
+        const otros = all.filter(h => h.id !== excludeId).slice(0, 4);
+        container.innerHTML = otros.map(h => `
+            <div class="col-6 col-md-3 mb-4">
+                <a href="detalle.html?id=${h.id}" class="text-decoration-none text-dark">
+                    <div class="card shadow-sm h-100 text-center border-0 bg-light">
+                        <img src="${h.imagen_url || '../imagenes/' + (h.imagen_principal || 'principal.avif')}" class="card-img-top" alt="${h.nombre}" style="height:100px;object-fit:cover;" onerror="this.src='../imagenes/principal.avif'">
+                        <div class="card-body p-2">
+                            <h6 class="card-title mb-1 fw-bold">${h.nombre}</h6>
+                            <small class="text-warning d-block">${getStarsHtml(h.estrellas)}</small>
+                            <small class="text-muted">📍 ${h.ciudad || 'Quito'}</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        `).join('');
+    } catch (e) { container.innerHTML = ''; }
+}
+
+function actTotal() {
+    const opt = tipoHabitacion.options[tipoHabitacion.selectedIndex];
+    const pn = parseFloat(opt?.dataset?.precio) || 0;
+    document.getElementById('precioBase').textContent = pn.toFixed(2);
+    const noches = calcularNoches(fechaEntrada.value, fechaSalida.value);
+    totalPrecio.textContent = noches > 0 ? `Total: $${(pn * noches).toFixed(2)} (${noches} noche${noches > 1 ? 's' : ''})` : '';
+}
+tipoHabitacion.addEventListener('change', actTotal);
+fechaEntrada.addEventListener('change', actTotal);
+fechaSalida.addEventListener('change', actTotal);
+
+if (fechaEntrada) { const m = new Date(); m.setDate(m.getDate()+1); fechaEntrada.min = m.toISOString().split('T')[0]; }
+
+btnReservar.addEventListener('click', async () => {
+    const token = getToken();
+    if (!token) { mensaje.style.color='red'; mensaje.textContent='Debes iniciar sesión'; return; }
+    if (!fechaEntrada.value || !fechaSalida.value) { mensaje.style.color='red'; mensaje.textContent='Selecciona fechas'; return; }
+    const opt = tipoHabitacion.options[tipoHabitacion.selectedIndex];
+    if (!opt?.value) { mensaje.style.color='red'; mensaje.textContent='Selecciona una habitación'; return; }
+    mensaje.textContent='Reservando...'; mensaje.style.color='gray';
+    try {
+        await apiFetch('/reservas/', { method:'POST', body: JSON.stringify({ habitacion_id: opt.value, hotel_id: HOTEL_ID, fecha_entrada: fechaEntrada.value, fecha_salida: fechaSalida.value }) });
+        mensaje.style.color='green'; mensaje.textContent='Reserva creada exitosamente!';
+    } catch (err) { mensaje.style.color='red'; mensaje.textContent=err.message; }
+});
+
+loadHotel();
+</script>
+</body>
+</html>

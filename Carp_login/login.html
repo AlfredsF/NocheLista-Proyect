@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos_login.css">
+    <title>Iniciar Sesión - NocheLista</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo.png">
+</head>
+<body>
+    <header style="display:flex;align-items:center;justify-content:center;padding:15px 0;background:#fff;border-bottom:1px solid #ddd;">
+        <a href="../index.html"><img src="../imagenes/logo.jpeg" alt="Logo NocheLista" style="height:50px;width:auto;"></a>
+    </header>
+    <main>
+        <form class="login" id="formLogin">
+            <h2>Inicia sesión</h2>
+            <div id="mensaje"></div>
+            <div class="inputs">
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+            </div>
+            <div class="inputs">
+                <input type="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <div class="inputs" style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                <input type="checkbox" name="recordar" id="recordar" style="width:auto;">
+                <label for="recordar">Recordar sesión</label>
+            </div>
+            <button type="submit">Inicia sesión</button>
+            <a href="registro.html" class="registro">Registrarse</a>
+        </form>
+    </main>
+
+<script src="../js/api.js"></script>
+<script>
+document.getElementById("formLogin").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value.trim();
+    const password = form.password.value;
+    const remember = form.recordar.checked;
+    const mensaje = document.getElementById("mensaje");
+
+    mensaje.textContent = "Iniciando sesión...";
+    mensaje.style.color = "gray";
+
+    try {
+        const data = await apiFetch('/auth/login/', {
+            method: "POST",
+            body: JSON.stringify({ email, password })
+        });
+        saveSession(data.token, data.user, remember);
+        mensaje.style.color = "green";
+        mensaje.textContent = "Inicio exitoso. Redirigiendo...";
+        setTimeout(() => { redirectByRole(); }, 1000);
+    } catch (err) {
+        mensaje.style.color = "red";
+        mensaje.textContent = err.message;
+    }
+});
+</script>
+</body>
+</html>

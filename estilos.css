@@ -1,0 +1,507 @@
+/* =========================================
+   Estilos Globales
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* =========================================
+   Cabecera
+   ========================================= */
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cabecera img {
+    height: 50px; /* Controla el tamaño del logo */
+    width: auto;
+    object-fit: contain;
+}
+
+.perfil-usuario img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+nav ul li{
+    list-style: none;
+    text-decoration: none;
+}
+nav ul li a {
+    color: #555;
+    font-weight: 500;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #00b2a9;
+}
+#check{
+    display: none;
+}
+
+/* Menú Hamburguesa (Oculto por defecto) */
+.checkbtn {
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    display: none;
+}
+
+/* =========================================
+   Seccion Principal (Hero)
+   ========================================= */
+.seccion-principal {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 400px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* =========================================
+   Hoteles Destacados
+   ========================================= */
+.hoteles-destacados {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.hoteles-destacados h2 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.tarjeta-hotel {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 32%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.imagen-hotel {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.contenido-tarjeta {
+    padding: 15px;
+}
+
+.contenido-tarjeta h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.estrellas {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.duracion {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.ubicacion {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* Ajuste para el icono del pin de ubicación */
+.ubicacion img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* =========================================
+   Beneficios
+   ========================================= */
+.beneficios {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-weight: normal;
+    margin-bottom: 30px;
+    color: #555;
+    text-align: left;
+}
+
+.contenedor-beneficios {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.item-beneficio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icono-beneficio {
+    margin-bottom: 15px;
+}
+
+/* Ajuste para los iconos grandes de beneficios */
+.icono-beneficio img,
+.item-beneficio img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.item-beneficio p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* =========================================
+   Seccion Nosotros
+   ========================================= */
+.seccion-nosotros {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f7f9;
+    border-radius: 15px;
+    padding: 40px;
+    gap: 30px;
+}
+
+.informacion-nosotros {
+    flex: 1;
+}
+
+.informacion-nosotros h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.informacion-nosotros p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* =========================================
+   Pie de pagina
+   ========================================= */
+.pie-pagina {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 40px;
+}
+
+.columna-pie {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Ajuste por si el logo principal se repite en el footer */
+.informacion-marca img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.informacion-marca .nombres,
+.informacion-marca .derechos {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.columna-pie h4 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.columna-pie a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.columna-pie a:hover {
+    color: #000;
+}
+
+.iconos-redes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Ajuste para los iconos de redes sociales */
+.iconos-redes img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* =========================================
+   Estilos para Tablas y Badges (Admin/Gestor)
+   ========================================= */
+.table-container {
+    overflow-x: auto;
+}
+
+.table th {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.badge-rol {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+.card-dashboard {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    border-radius: 12px;
+}
+
+.card-dashboard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.metric-card {
+    border-left: 4px solid;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   Estilos para Formularios en Modal
+   ========================================= */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #eee;
+    padding: 15px 20px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: 1px solid #eee;
+    padding: 12px 20px;
+}
+
+/* =========================================
+   Estilos para el Selector de Rol en Registro
+   ========================================= */
+.input-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    background: #fff;
+    font-size: 14px;
+}
+
+.input-select:focus {
+    border-color: #1fa2b6;
+    box-shadow: 0 0 5px rgba(31,162,182,0.4);
+}
+
+/* =========================================
+   Spinner de carga
+   ========================================= */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.15em;
+}
+
+/* =========================================
+   Estilos para mensajes de feedback
+   ========================================= */
+.msg-success {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.msg-error {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.msg-info {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* =========================================
+   Navbar - enlaces especiales para admin/gestor
+   ========================================= */
+.nav-link-admin {
+    color: #dc3545 !important;
+    font-weight: 600;
+}
+
+.nav-link-gestor {
+    color: #0d6efd !important;
+    font-weight: 600;
+}
+
+/*Adaptación para Tablet (Máximo 1024px)*/
+@media (max-width: 1024px) {
+    .cabecera {
+        padding: 15px 20px;
+    }
+
+    .seccion-principal {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .contenedor-tarjetas {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tarjeta-hotel {
+        width: 45%;
+    }
+}
+
+/*Adaptación para Móvil (Máximo 768px)*/
+@media (max-width: 768px) {
+    .checkbtn{
+        display: block;
+        order: 2;
+        z-index: 1003;
+    }
+    .checkbtn {
+        display: block;
+        cursor: pointer;
+        color: #333;
+        font-size: 30px;
+        position: relative; 
+        z-index: 1002;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 0;
+        left: -100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease;
+        z-index: 1001; 
+    }
+    nav ul li {
+        margin: 20px 0;
+        list-style: none;
+    }
+    nav ul li a {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    .contenedor-tarjetas, 
+    .contenedor-beneficios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta-hotel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .seccion-nosotros {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .pie-pagina {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+    .iconos-redes {
+        justify-content: center;
+    }
+}
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Casa Gangotena - NocheLista</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="logo"><a href="../index.html"><img src="../imagenes/logo.jpeg" alt="Logo"></a></div>
+        <nav>
+            <input type="checkbox" id="check"><label for="check" class="checkbtn">&#9776;</label>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li><li><a href="../hoteles.html">Hoteles</a></li>
+                <li><a href="../mis-reservas.html">Mis Reservas</a></li>
+                <li><a href="../index.html#app">App</a></li><li><a href="../index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="icono-usuario">
+            <a href="../Carp_login/login.html"><img src="../imagenes/perfil.png" alt="Perfil" style="border-radius:50%;"></a>
+            <span id="userGreeting" style="color:#333;margin-left:8px;font-size:14px;"></span>
+        </div>
+    </header>
+    <main class="container my-5">
+        <div id="loadingDetalle" class="text-center py-5"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">Cargando...</p></div>
+        <div id="hotelContent" style="display:none;">
+            <div class="row mb-4"><div class="col-12 text-center text-md-start"><h1 class="fw-bold text-uppercase">Hotel Casa Gangotena (Quito Centro)</h1></div></div>
+            <div class="row mb-5 align-items-center">
+                <div class="col-md-7 mb-4 mb-md-0"><img src="../imagenes/hotel_gangotena.webp" class="img-fluid rounded shadow" style="width:100%;height:400px;object-fit:cover;" alt="Hotel Casa Gangotena"></div>
+                <div class="col-md-5 d-flex flex-column align-items-center">
+                    <h5 class="mb-4">Elige tu reserva</h5>
+                    <div class="w-75 mb-3 p-3 bg-light rounded shadow-sm text-center"><p class="mb-1 text-muted small">Precio por noche</p><p class="fw-bold text-success fs-4 mb-0">$<span id="precioBase">250</span></p></div>
+                    <select id="tipoHabitacion" class="form-select mb-3 shadow-sm w-75"><option value="" disabled>Selecciona una habitación</option></select>
+                    <input type="date" id="fechaEntrada" class="form-control mb-3 shadow-sm w-75 p-2" style="cursor:pointer;">
+                    <input type="date" id="fechaSalida" class="form-control mb-3 shadow-sm w-75 p-2" style="cursor:pointer;">
+                    <div id="totalPrecio" class="w-75 text-center mb-3 text-muted small"></div>
+                    <div class="d-flex gap-3 w-100 justify-content-center">
+                        <button id="btnReservar" class="btn btn-success fw-bold px-4">RESERVAR</button>
+                        <a href="https://wa.me/0000000000" target="_blank" class="btn btn-outline-success fw-bold px-3">HABLA CON EL GERENTE</a>
+                    </div>
+                    <div id="reservaMensaje" class="mt-3 text-center fw-bold"></div>
+                </div>
+            </div>
+            <div class="row mb-4 mt-5"><div class="col-12 text-center"><h3 class="fw-normal" style="border-bottom:1px solid #333;display:inline-block;padding-bottom:5px;">Descripción</h3></div></div>
+            <div class="row mb-5">
+                <div class="col-md-4 mb-3"><p class="text-muted" style="text-align:justify;">Situada majestuosamente frente a la icónica Plaza de San Francisco, Casa Gangotena es una mansión republicana bellamente restaurada que redefine el lujo boutique. Su diseño refleja la elegancia y el esplendor de la alta sociedad quiteña del pasado.</p></div>
+                <div class="col-md-4 mb-3"><p class="text-muted" style="text-align:justify;">Los interiores son una obra de arte, con cielorrasos pintados, antigüedades exquisitas y ventanales que bañan los espacios con luz natural. La terraza panorámica ofrece, sin duda, una de las vistas más impresionantes de las cúpulas de la ciudad y los Andes.</p></div>
+                <div class="col-md-4 mb-3"><p class="text-muted" style="text-align:justify;">El compromiso de Casa Gangotena con la excelencia se extiende a su oferta culinaria. Su restaurante rinde homenaje a la rica biodiversidad del Ecuador, creando platos innovadores que celebran los ingredientes locales con un toque contemporáneo.</p></div>
+            </div>
+            <div class="row mt-5" id="otrosHoteles"></div>
+        </div>
+    </main>
+    <footer class="pie-pagina">
+        <div class="columna-pie informacion-marca"><img src="../imagenes/logo.jpeg" alt="Logo"><p class="nombres">Alfredo Fuel, Merchan, Sanches</p><p class="derechos">2026 Derechos Reservados</p></div>
+        <div class="columna-pie"><h4>Servicio al Cliente</h4><a href="#">Contáctanos</a><a href="#">Ayuda/FAQ</a><a href="#">Soporte experto</a></div>
+        <div class="columna-pie"><h4>Legal</h4><a href="#">Términos y Condiciones</a><a href="#">Política de Privacidad</a></div>
+        <div class="columna-pie redes-sociales"><div class="iconos-redes">
+            <a href="https://wa.me/0000000000" target="_blank"><img src="../imagenes/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="../imagenes/instagram.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="../imagenes/yotube.png" alt="YouTube"></a>
+            <a href="https://twitter.com/" target="_blank"><img src="../imagenes/x.png" alt="Twitter"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="../imagenes/facebook.png" alt="Facebook"></a>
+            <a href="https://www.pinterest.com/" target="_blank"><img src="../imagenes/printerest.png" alt="Pinterest"></a>
+        </div></div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/utils.js"></script>
+<script>
+updateNavGreeting();
+const HOTEL_ID = 'gangotena';
+const fechaEntrada = document.getElementById('fechaEntrada');
+const fechaSalida = document.getElementById('fechaSalida');
+const tipoHabitacion = document.getElementById('tipoHabitacion');
+const totalPrecio = document.getElementById('totalPrecio');
+const btnReservar = document.getElementById('btnReservar');
+const mensaje = document.getElementById('reservaMensaje');
+
+async function loadHotel() {
+    try {
+        const data = await apiFetch(`/hoteles/${HOTEL_ID}/`);
+        document.getElementById('loadingDetalle').style.display='none';
+        document.getElementById('hotelContent').style.display='block';
+        (data.habitaciones||[]).forEach(h => { tipoHabitacion.innerHTML += `<option value="${h.id}" data-precio="${h.precio_por_noche}">${h.nombre} - $${parseFloat(h.precio_por_noche).toFixed(2)}/noche</option>`; });
+        const all = await apiFetch('/hoteles/');
+        document.getElementById('otrosHoteles').innerHTML = all.filter(h=>h.id!==HOTEL_ID).slice(0,4).map(h=>`<div class="col-6 col-md-3 mb-4"><a href="detalle.html?id=${h.id}" class="text-decoration-none text-dark"><div class="card shadow-sm h-100 text-center border-0 bg-light"><img src="${h.imagen_url||'../imagenes/'+(h.imagen_principal||'principal.avif')}" class="card-img-top" alt="${h.nombre}" style="height:100px;object-fit:cover;" onerror="this.src='../imagenes/principal.avif'"><div class="card-body p-2"><h6 class="card-title mb-1 fw-bold">${h.nombre}</h6><small class="text-warning d-block">${getStarsHtml(h.estrellas)}</small><small class="text-muted">📍 ${h.ciudad||'Quito'}</small></div></div></a></div>`).join('');
+    } catch(e){ document.getElementById('loadingDetalle').style.display='none'; document.getElementById('hotelContent').style.display='block'; }
+}
+function actTotal(){ const o=tipoHabitacion.options[tipoHabitacion.selectedIndex]; const p=parseFloat(o?.dataset?.precio)||0; document.getElementById('precioBase').textContent=p.toFixed(2); const n=calcularNoches(fechaEntrada.value,fechaSalida.value); totalPrecio.textContent=n>0?`Total: $${(p*n).toFixed(2)} (${n} noche${n>1?'s':''})`:''; }
+tipoHabitacion.addEventListener('change',actTotal);
+fechaEntrada.addEventListener('change',actTotal);
+fechaSalida.addEventListener('change',actTotal);
+if(fechaEntrada){const m=new Date();m.setDate(m.getDate()+1);fechaEntrada.min=m.toISOString().split('T')[0];}
+btnReservar.addEventListener('click',async()=>{const t=getToken();if(!t){mensaje.style.color='red';mensaje.textContent='Debes iniciar sesión';return;}if(!fechaEntrada.value||!fechaSalida.value){mensaje.style.color='red';mensaje.textContent='Selecciona fechas';return;}const o=tipoHabitacion.options[tipoHabitacion.selectedIndex];if(!o?.value){mensaje.style.color='red';mensaje.textContent='Selecciona una habitación';return;}mensaje.textContent='Reservando...';mensaje.style.color='gray';try{await apiFetch('/reservas/',{method:'POST',body:JSON.stringify({habitacion_id:o.value,hotel_id:HOTEL_ID,fecha_entrada:fechaEntrada.value,fecha_salida:fechaSalida.value})});mensaje.style.color='green';mensaje.textContent='Reserva creada exitosamente!';}catch(err){mensaje.style.color='red';mensaje.textContent=err.message;}});
+loadHotel();
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - NocheLista</title>
+    <link rel="icon" type="image/png" href="../imagenes/logo.png">
+    <link rel="stylesheet" href="estilos_login.css">
+    <style>
+        .login { width: 380px; }
+        .inputs label { display: block; margin-bottom: 4px; font-size: 13px; color: #555; }
+        select.input-select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; transition: 0.3s; background: #fff; }
+        select.input-select:focus { border-color: #1fa2b6; box-shadow: 0 0 5px rgba(31,162,182,0.4); }
+    </style>
+</head>
+<body>
+    <header style="display:flex;align-items:center;justify-content:center;padding:15px 0;background:#fff;border-bottom:1px solid #ddd;">
+        <a href="../index.html"><img src="../imagenes/logo.jpeg" alt="Logo NocheLista" style="height:50px;width:auto;"></a>
+    </header>
+<main>
+    <div class="login">
+        <h1>Crear cuenta</h1>
+
+        <form id="formRegistro">
+            <div class="inputs">
+                <label>Nombre completo</label>
+                <input type="text" name="nombre_completo" required>
+            </div>
+
+            <div class="inputs">
+                <label>Correo electrónico</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="inputs">
+                <label>Teléfono (opcional)</label>
+                <input type="tel" name="telefono" placeholder="+593999999999">
+            </div>
+
+            <div class="inputs">
+                <label>Contraseña (mín. 6 caracteres)</label>
+                <input type="password" name="password" minlength="6" required>
+            </div>
+
+            <div class="inputs">
+                <label>Confirmar contraseña</label>
+                <input type="password" name="confirmar" required>
+            </div>
+
+            <div class="inputs">
+                <label>Tipo de cuenta</label>
+                <select name="rol" class="input-select">
+                    <option value="cliente">Cliente - Quiero reservar hoteles</option>
+                    <option value="gestor">Gestor - Quiero afiliar mi hotel</option>
+                </select>
+            </div>
+
+            <div id="mensaje"></div>
+            <button type="submit">Crear cuenta</button>
+
+            <p style="margin-top:12px;text-align:center;font-size:13px;">
+                ¿Ya tienes cuenta?
+                <a href="login.html" style="color:#1fa2b6;">Inicia sesión</a>
+            </p>
+        </form>
+    </div>
+</main>
+
+<script src="../js/api.js"></script>
+<script>
+(function() {
+    const form = document.getElementById("formRegistro");
+    const mensaje = document.getElementById("mensaje");
+
+    function showFieldError(input, msg) {
+        input.style.borderColor = "#dc3545";
+        let errEl = input.parentNode.querySelector(".field-error");
+        if (!errEl) {
+            errEl = document.createElement("small");
+            errEl.className = "field-error";
+            errEl.style.cssText = "color:#dc3545;font-size:12px;display:block;margin-top:2px;";
+            input.parentNode.appendChild(errEl);
+        }
+        errEl.textContent = msg;
+    }
+
+    function clearFieldError(input) {
+        input.style.borderColor = "";
+        const errEl = input.parentNode.querySelector(".field-error");
+        if (errEl) errEl.remove();
+    }
+
+    const validators = {
+        nombre_completo: function(input) {
+            if (!input.value.trim()) { showFieldError(input, "El nombre es obligatorio"); return false; }
+            clearFieldError(input); return true;
+        },
+        email: function(input) {
+            const val = input.value.trim();
+            if (!val) { showFieldError(input, "El correo es obligatorio"); return false; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { showFieldError(input, "Correo no válido"); return false; }
+            clearFieldError(input); return true;
+        },
+        password: function(input) {
+            if (input.value.length < 6) { showFieldError(input, "Mínimo 6 caracteres"); return false; }
+            clearFieldError(input);
+            if (form.confirmar.value) validators.confirmar(form.confirmar);
+            return true;
+        },
+        confirmar: function(input) {
+            if (input.value !== form.password.value) { showFieldError(input, "Las contraseñas no coinciden"); return false; }
+            clearFieldError(input); return true;
+        }
+    };
+
+    ["nombre_completo", "email", "password", "confirmar"].forEach(name => {
+        const input = form[name];
+        input.addEventListener("input", function() { validators[name](this); });
+        input.addEventListener("blur", function() { validators[name](this); });
+    });
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const allValid = Object.keys(validators).every(name => validators[name](form[name]));
+        if (!allValid) return;
+
+        const data = {
+            email: form.email.value.trim(),
+            password: form.password.value,
+            nombre_completo: form.nombre_completo.value.trim(),
+            telefono: form.telefono.value.trim(),
+            rol: form.rol.value
+        };
+
+        mensaje.textContent = "Registrando...";
+        mensaje.style.color = "gray";
+
+        try {
+            const result = await apiFetch('/auth/register/', {
+                method: "POST",
+                body: JSON.stringify(data)
+            });
+            saveSession(result.token, result.user, false);
+
+            mensaje.style.color = "green";
+            mensaje.textContent = "Registro exitoso. Redirigiendo...";
+            setTimeout(() => { redirectByRole(); }, 1500);
+        } catch (err) {
+            mensaje.style.color = "red";
+            mensaje.textContent = err.message;
+        }
+    });
+})();
+</script>
+</body>
+</html>
