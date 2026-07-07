@@ -1,0 +1,604 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cabecera img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: #555;
+  font-weight: 500;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #00b2a9;
+}
+
+#check {
+  display: none;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  display: none;
+}
+
+.seccion-principal {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  height: 400px;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hoteles-destacados {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.hoteles-destacados h2 {
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.tarjeta-hotel {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 32%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.imagen-hotel {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.contenido-tarjeta {
+  padding: 15px;
+}
+
+.contenido-tarjeta h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.estrellas {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.duracion {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.ubicacion {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #555;
+}
+
+.ubicacion img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.beneficios {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.beneficios h2 {
+  font-weight: normal;
+  margin-bottom: 30px;
+  color: #555;
+  text-align: left;
+}
+
+.contenedor-beneficios {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.item-beneficio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icono-beneficio {
+  margin-bottom: 15px;
+}
+
+.icono-beneficio img,
+.item-beneficio img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.item-beneficio p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.seccion-nosotros {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f7f9;
+  border-radius: 15px;
+  padding: 40px;
+  gap: 30px;
+}
+
+.informacion-nosotros {
+  flex: 1;
+}
+
+.informacion-nosotros h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.informacion-nosotros p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.pie-pagina {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 50px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
+}
+
+.columna-pie {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.informacion-marca img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.informacion-marca .nombres,
+.informacion-marca .derechos {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.columna-pie h4 {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.columna-pie a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.columna-pie a:hover {
+  color: #000;
+}
+
+.iconos-redes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.iconos-redes img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table th {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.badge-rol {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+.card-dashboard {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  border-radius: 12px;
+}
+
+.card-dashboard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.metric-card {
+  border-left: 4px solid;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+}
+
+.modal-content {
+  border-radius: 12px;
+  border: none;
+}
+
+.modal-header {
+  border-bottom: 1px solid #eee;
+  padding: 15px 20px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: 1px solid #eee;
+  padding: 12px 20px;
+}
+
+.input-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+  background: #fff;
+  font-size: 14px;
+}
+
+.input-select:focus {
+  border-color: #1fa2b6;
+  box-shadow: 0 0 5px rgba(31,162,182,0.4);
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+}
+
+.msg-success {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.msg-error {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.msg-info {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.nav-link-admin {
+  color: #dc3545 !important;
+  font-weight: 600;
+}
+
+.nav-link-gestor {
+  color: #0d6efd !important;
+  font-weight: 600;
+}
+
+.filtros {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.perfil-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.perfil-card .card {
+  border: none;
+  border-radius: 16px;
+}
+.perfil-card .form-control:focus {
+  border-color: #1fa2b6;
+  box-shadow: 0 0 0 0.2rem rgba(31,162,182,0.25);
+}
+.perfil-card .btn-primary {
+  background-color: #1fa2b6;
+  border-color: #1fa2b6;
+}
+.perfil-card .btn-primary:hover {
+  background-color: #178a99;
+  border-color: #178a99;
+}
+.perfil-card .btn-outline-primary {
+  color: #1fa2b6;
+  border-color: #1fa2b6;
+}
+.perfil-card .btn-outline-primary:hover {
+  background-color: #1fa2b6;
+  border-color: #1fa2b6;
+  color: #fff;
+}
+.section-title {
+  border-bottom: 2px solid #1fa2b6;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* =========================================
+   Estilos para Login/Registro (migrados de estilos_login.css)
+   ========================================= */
+.auth-body {
+  color: #333;
+  background: linear-gradient(135deg, #6a9c9c, #4f7c7c);
+}
+
+.auth-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 82px);
+}
+
+.auth-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.auth-header img {
+  height: 50px;
+  width: auto;
+}
+
+.auth-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 35px 30px;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.auth-card-wide {
+  width: 380px;
+}
+
+.auth-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.auth-card h1 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.auth-card .inputs {
+  margin-bottom: 15px;
+}
+
+.auth-card .inputs input,
+.auth-card .inputs select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.auth-card .inputs input:focus {
+  border-color: #1fa2b6;
+  box-shadow: 0 0 5px rgba(31,162,182,0.4);
+}
+
+.auth-card .inputs label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #555;
+}
+
+.auth-card .inputs .input-error,
+.auth-card .inputs input.input-error {
+  border-color: #dc3545 !important;
+}
+
+.auth-card .inputs .field-error {
+  color: #dc3545;
+  font-size: 12px;
+  display: block;
+  margin-top: 2px;
+}
+
+.auth-card button[type="submit"] {
+  background-color: #1fa2b6;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.auth-card button[type="submit"]:hover {
+  background-color: #178a99;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+.auth-link-registro {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #1fa2b6;
+  border-radius: 6px;
+  color: #1fa2b6;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.auth-link-registro:hover {
+  background: #1fa2b6;
+  color: white;
+}
+
+.auth-card a {
+  text-decoration: none;
+}
+
+.auth-bottom-text {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+}
+
+.auth-bottom-text a {
+  color: #1fa2b6;
+}
+
+@media (max-width: 480px) {
+  .auth-card { width: 90%; padding: 25px 20px; }
+  .auth-card-wide { width: 90%; }
+  .auth-card .inputs input,
+  .auth-card .inputs select { font-size: 14px; padding: 10px; }
+  .auth-card button[type="submit"] { font-size: 15px; padding: 11px; }
+}
+
+@media (max-width: 1024px) {
+  .cabecera { padding: 15px 20px; }
+  .seccion-principal { height: auto; padding-bottom: 20px; }
+  .contenedor-tarjetas { flex-wrap: wrap; justify-content: center; }
+  .tarjeta-hotel { width: 45%; }
+}
+
+@media (max-width: 768px) {
+  .checkbtn { display: block; cursor: pointer; color: #333; font-size: 30px; position: relative; z-index: 1002; }
+  nav ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 0;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease;
+    z-index: 1001;
+  }
+  nav ul li { margin: 20px 0; list-style: none; }
+  nav ul li a { color: white; font-size: 24px; text-decoration: none; }
+  #check:checked ~ ul { left: 0; }
+  .contenedor-tarjetas, .contenedor-beneficios { flex-direction: column; align-items: center; }
+  .tarjeta-hotel { width: 100%; margin-bottom: 20px; }
+  .seccion-nosotros { flex-direction: column; padding: 20px; }
+  .pie-pagina { flex-direction: column; gap: 30px; align-items: center; text-align: center; }
+  .iconos-redes { justify-content: center; }
+  .filtros .row > div { margin-bottom: 10px; }
+}
