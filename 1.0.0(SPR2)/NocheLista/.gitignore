@@ -1,0 +1,23 @@
+node_modules/
+frontend-react/node_modules/
+frontend-react/dist/
+frontend-react/public/hotel_*.webp
+frontend-react/public/hotel_*.avif
+
+# Backend
+NocheLista/backend/venv/
+NocheLista/backend/.venv/
+NocheLista/backend/__pycache__/
+NocheLista/backend/**/__pycache__/
+NocheLista/backend/**/*.pyc
+NocheLista/backend/**/*.pyo
+NocheLista/backend/db.sqlite3
+
+NocheLista/node_modules/
+
+.env
+*.log
+.DS_Store
+Thumbs.db
+
+/docs/
