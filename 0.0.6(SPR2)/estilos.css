@@ -1,0 +1,691 @@
+/* =========================================
+   Estilos Globales
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* =========================================
+   Cabecera
+   ========================================= */
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cabecera img {
+    height: 50px; /* Controla el tamaño del logo */
+    width: auto;
+    object-fit: contain;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.navegacion a:hover {
+    color: #0056b3;
+}
+
+/* Ajuste por si el icono de usuario es una imagen */
+.perfil-usuario img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+nav ul li{
+    list-style: none;
+    text-decoration: none;
+}
+nav ul li a {
+    color: #555;
+    font-weight: 500;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #00b2a9;
+}
+#check{
+    display: none;
+}
+
+/* Menú Hamburguesa (Oculto por defecto) */
+.checkbtn {
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    display: none;
+}
+
+/* =========================================
+   Seccion Principal (Hero)
+   ========================================= */
+.seccion-principal {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 400px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.imagen-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.contenedor-busqueda {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-principal {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.formulario-busqueda {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-busqueda label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+}
+
+.entrada-texto {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.boton-buscar {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100px;
+    margin-top: 10px;
+}
+
+/* =========================================
+   Hoteles Destacados
+   ========================================= */
+.hoteles-destacados {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.hoteles-destacados h2 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.tarjeta-hotel {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 32%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.tarjeta-hotel:hover{
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 2);
+}
+
+
+.imagen-hotel {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.contenido-tarjeta {
+    padding: 15px;
+}
+
+.contenido-tarjeta h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.estrellas {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.duracion {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.ubicacion {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* Ajuste para el icono del pin de ubicación */
+.ubicacion img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* =========================================
+   Beneficios
+   ========================================= */
+.beneficios {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-weight: normal;
+    margin-bottom: 30px;
+    color: #555;
+    text-align: left;
+}
+
+.contenedor-beneficios {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.item-beneficio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icono-beneficio {
+    margin-bottom: 15px;
+}
+
+/* Ajuste para los iconos grandes de beneficios */
+.icono-beneficio img,
+.item-beneficio img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.item-beneficio p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/*Seccion Nosotros*/
+.seccion-nosotros {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f7f9;
+    border-radius: 15px;
+    padding: 40px;
+    gap: 30px;
+}
+
+.informacion-nosotros {
+    flex: 1;
+}
+
+.informacion-nosotros h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.informacion-nosotros p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.mapa-nosotros {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imagen-mapa {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/*Pie de pagina*/
+.pie-pagina {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 40px;
+}
+
+.columna-pie {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Ajuste por si el logo principal se repite en el footer */
+.informacion-marca img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.informacion-marca .nombres,
+.informacion-marca .derechos {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.columna-pie h4 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.columna-pie a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.columna-pie a:hover {
+    color: #000;
+}
+
+.iconos-redes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Ajuste para los iconos de redes sociales */
+.iconos-redes img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/*Adaptación para Tablet (Máximo 1024px)*/
+@media (max-width: 1024px) {
+    .cabecera {
+        padding: 15px 20px;
+    }
+
+    .seccion-principal {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .contenedor-tarjetas {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tarjeta-hotel {
+        width: 45%;
+    }
+}
+
+/*Adaptación para Móvil (Máximo 768px)*/
+@media (max-width: 768px) {
+    .checkbtn{
+        display: block;
+        order: 2;
+        z-index: 1003;
+    }
+    .checkbtn {
+        display: block;
+        cursor: pointer;
+        color: #333;
+        font-size: 30px;
+        position: relative; 
+        z-index: 1002;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 0;
+        left: -100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease;
+        z-index: 1001; 
+    }
+    nav ul li {
+        margin: 20px 0;
+        list-style: none;
+    }
+    nav ul li a {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    .contenedor-busqueda {
+        padding: 20px;
+        align-items: center;
+    }
+    .titulo-principal {
+        font-size: 20px;
+        text-align: center;
+    }
+    .formulario-busqueda {
+        width: 100%; 
+    }
+    .contenedor-tarjetas, 
+    .contenedor-beneficios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta-hotel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .seccion-nosotros {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .pie-pagina {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+    .iconos-redes {
+        justify-content: center;
+    }
+}
+/*Aqui se asigna el max de ancho, margen y espacio que ocupa todo*/
+.Hoteles {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+/*aqui asigna a h1 
+fuente, margen, color fuente*/
+.Hoteles > h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #1a1a2e;
+  }
+
+  /* ── LAYOUT: filtros + tarjetas ── */
+.hoteles_layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  /* ── PANEL FILTROS ── */
+  .filtrar_resultados {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 220px;
+    min-width: 220px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+
+  .filtrar_resultados h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 16px;
+  }
+
+  .filtrar_resultados .seccion {
+    margin-bottom: 18px;
+  }
+
+  .filtrar_resultados .seccion-titulo {
+    font-size: 13px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .separador {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin: 14px 0;
+  }
+
+  /* rango de precios */
+  .rango-label {
+    font-size: 12px;
+    color: #888;
+    margin-top: 6px;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    accent-color: #2e86de;
+    cursor: pointer;
+    margin: 6px 0 2px;
+  }
+
+  /* radio buttons personalizados */
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #444;
+    cursor: pointer;
+  }
+/*estilos del dentro de cada opcion (radio buttoms)*/
+  .radio-item input[type="radio"] {
+    accent-color: #2e86de;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+
+  /* botón aplicar */
+  .btn-filtrar {
+    width: 100%;
+    background: #2e86de;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 9px 0;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.2s;
+  }
+
+  .btn-filtrar:hover { background: #1a6fc4; }
+
+  /* ── LISTA DE HOTELES ── */
+  .lista_hoteles {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hotel-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px; /* rounded-2xl */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* shadow-sm */
+    display: flex;
+    flex-direction: row; /* Default PC layout */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hotel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1); /* hover:shadow-xl */
+  }
+
+  .hotel-card img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hotel-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hotel-info a.hotel-nombre {
+    color: #111827; /* text-gray-900 */
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    text-decoration: none;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .hotel-info a.hotel-nombre:hover {
+    color: #1fa2b6;
+  }
+
+  .hotel-estrellas {
+    font-size: 0.9rem;
+    color: #6b7280; /* text-gray-500 */
+    margin-bottom: 8px;
+  }
+
+  .hotel-ubicacion {
+    font-size: 12px;
+    color: #2e86de;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .hotel-descripcion {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+
+  /* placeholder imagen */
+  .hotel-card img{
+    width: 160px;
+    min-width: 160px;
+    height: 130px;
+    object-fit: cover;
+  }
+
+  /* paginación */
+  .paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .paginacion button {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    color: #444;
+    transition: all 0.15s;
+  }
+
+  .paginacion button.active,
+  .paginacion button:hover {
+    background: #2e86de;
+    color: #fff;
+    border-color: #2e86de;
+  }
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - NocheLista</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos_login.css">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<main>
+    <div class="login">
+        <h2>Crear Cuenta</h2>
+
+        <form id="form_registro">
+
+            <div class="inputs">
+                <label>Usuario</label>
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="Usuario" name="usuario" id="reg_usuario" required>
+            </div>
+
+            <div class="inputs">
+                <label>Correo</label>
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Correo Electrónico" name="correo" id="reg_correo" required>
+            </div>
+
+            <div class="inputs">
+                <label>Contraseña</label>
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Contraseña" name="password" id="reg_password" required>
+            </div>
+
+            <div class="inputs">
+                <label>Confirmar contraseña</label>
+                <i class="fa-solid fa-check"></i>
+                <input type="password" placeholder="Confirmar contraseña" name="confirmar" id="reg_confirmar" required>
+            </div>
+
+            <button type="submit">Registrarse</button>
+
+            <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+
+        </form>
+    </div>
+</main>
+<script src="login_users.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD - NocheLista</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <link rel="stylesheet" href="estilos_dash.css">
+    <link rel="stylesheet" href="dashboard_resenas_estilos.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+    <!-- Barra Lateral (Sidebar) -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="../imagenes/logo.jpeg" alt="Logo NocheLista">
+        </div>
+        
+        <nav>
+            <a href="#" class="tab-link active" data-tab="informacion">
+                <i class="fa-solid fa-user"></i>
+                <span>Información</span>
+            </a>
+
+            <a href="#" class="tab-link" data-tab="reservas">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Mis Reservas</span>
+            </a>
+            
+            <a href="#" class="tab-link" data-tab="resenas">
+                <i class="fa-solid fa-star"></i>
+                <span>Reseñas ⭐</span>
+            </a>
+
+            <a href="#" class="tab-link" data-tab="pagos">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Métodos de Pago</span>
+            </a>
+
+            <a href="../hoteles.html" style="display:flex; align-items:center; gap:15px; padding:15px 20px; text-decoration:none; color:#1fa2b6; font-weight:600; margin-top:20px; border-top: 1px solid #eee;">
+                <i class="fa-solid fa-hotel" style="width:24px; text-align:center;"></i>
+                <span>Explorar Hoteles</span>
+            </a>
+
+            <a href="../index.html" class="logout-link" id="btnLogout">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <!-- Topbar con perfil -->
+        <header class="topbar">
+            <div class="user-profile">
+                <h5>Administrador</h5>
+                <a href="login.html"><img src="../imagenes/perfil.png" alt="Perfil Usuario"></a>
+            </div>
+        </header>
+
+        <!-- TAB: INFORMACION -->
+        <main id="informacion" class="tab-content active" style="display: grid;">
+            <section class="form-section">
+                <h2>Configuración de Cuenta</h2>
+                
+                <div class="input-group">
+                    <label>Nombres y Apellidos</label>
+                    <input type="text" placeholder="Ej. Joseph Merchan">
+                </div>
+                
+                <div class="input-group">
+                    <label>Fecha de Nacimiento</label>
+                    <input type="date">
+                </div>
+                
+                <div class="input-group">
+                    <label>Dirección</label>
+                    <input type="text" placeholder="Ej. Av Cacha y Jose andrango">
+                </div>
+                
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="Joseph@gmail.com">
+                </div>
+                
+                <button id="btnActualizar" class="btn-primary">Guardar Cambios</button>
+            </section>
+
+            <aside class="profile-card">
+                <img src="../imagenes/joven-hombre-barbudo-camisa-rayas_273609-5677.avif" alt="usuario">
+                <h3>Joseph Merchan</h3>
+                <p>Bienvenido a tu panel de administración. Aquí podrás gestionar tu perfil, reservas y reseñas en la plataforma NocheLista.</p>
+            </aside>
+        </main>
+
+        <!-- TAB: RESERVAS -->
+        <main id="reservas" class="tab-content" style="display: none;">
+            <div class="form-section">
+                <h2>Mis Reservas</h2>
+                <div id="reservasLista"></div>
+                <p id="sinReservas" style="color: #6c757d;">No tienes reservas activas en este momento.</p>
+            </div>
+        </main>
+
+        <!-- TAB: RESEÑAS -->
+        <main id="resenas" class="tab-content" style="display: none;">
+            <!-- Reutilizando CSS existente para las cards de reseña -->
+            <section class="contenido" style="width: 100%;">
+                <div class="titulo" style="margin-bottom: 30px;">
+                    <h2 style="color: #1fa2b6;">Gestión de Reseñas</h2>
+                    <input type="text" placeholder="Buscar hotel..." style="padding: 10px; border-radius: 8px; border: 1px solid #ccc; outline: none;">
+                </div>
+
+                <div class="card review-card">
+                    <div class="reseña">
+                        <div class="hotel-info">
+                            <img src="../imagenes/hotel_gangotena.webp" alt="Hotel">
+                            <div>
+                                <h3>Hotel Casa Gangotena</h3>
+                                <p>Quito - Ecuador</p>
+                            </div>
+                        </div>
+                        <span class="estado" style="font-weight:bold; color:#777;">PENDIENTE</span>
+                    </div>
+
+                    <div class="usuario">
+                        <img src="../imagenes/joven-hombre-barbudo-camisa-rayas_273609-5677.avif" alt="Usuario">
+                        <div>
+                            <h4>Jose López</h4>
+                            <p style="color: gold;">⭐⭐⭐⭐⭐</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-bottom: 20px; color:#555;">Excelente servicio, habitaciones muy limpias y personal amable. La vista fue increíble y el desayuno estuvo muy completo.</p>
+                    <div class="acciones">
+                        <button class="btn aprobar" style="background:#28a745; color:white; border:none; padding:10px 15px; border-radius:6px; cursor:pointer;"><i class="fa-solid fa-check"></i> Aprobar</button>
+                        <button class="btn eliminar" style="background:#dc3545; color:white; border:none; padding:10px 15px; border-radius:6px; cursor:pointer;"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                    </div>
+                </div>
+                
+                <div class="card review-card" style="margin-top: 20px;">
+                    <div class="reseña">
+                        <div class="hotel-info">
+                            <img src="../imagenes/hotel_sanF.webp" alt="Hotel">
+                            <div>
+                                <h3>Hotel San Francisco</h3>
+                                <p>Quito - Ecuador</p>
+                            </div>
+                        </div>
+                        <span class="estado" style="font-weight:bold; color:#777;">PENDIENTE</span>
+                    </div>
+
+                    <div class="usuario">
+                        <img src="../imagenes/joven-hombre-barbudo-camisa-rayas_273609-5677.avif" alt="Usuario">
+                        <div>
+                            <h4>Maria Fernanda</h4>
+                            <p style="color: gold;">⭐⭐⭐⭐⭐</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-bottom: 20px; color:#555;">Me encantó la estancia. Muy recomendado para viajes en pareja o familia.</p>
+                    <div class="acciones">
+                        <button class="btn aprobar" style="background:#28a745; color:white; border:none; padding:10px 15px; border-radius:6px; cursor:pointer;"><i class="fa-solid fa-check"></i> Aprobar</button>
+                        <button class="btn eliminar" style="background:#dc3545; color:white; border:none; padding:10px 15px; border-radius:6px; cursor:pointer;"><i class="fa-solid fa-trash"></i> Eliminar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- TAB: METODOS DE PAGO -->
+        <main id="pagos" class="tab-content" style="display: none;">
+            <div class="form-section">
+                <h2>Métodos de Pago</h2>
+                <p style="color: #6c757d;">Aún no has agregado métodos de pago.</p>
+            </div>
+        </main>
+    </div>
+</div>
+   
+<script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px;
+    background: #ffffff;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    z-index: 10;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar .logo img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.tab-link, .logout-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.tab-link i, .logout-link i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.tab-link:hover {
+    background: #f8f9fa;
+    color: #1fa2b6;
+    transform: translateX(5px);
+}
+
+.tab-link.active {
+    background: #1fa2b6;
+    color: white;
+    box-shadow: 0 4px 10px rgba(31,162,182,0.3);
+}
+
+.logout-link {
+    margin-top: auto;
+    background: #fff0f0;
+    color: #dc3545;
+}
+
+.logout-link:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: #f4f7f6;
+}
+
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.user-profile h5 {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Tab Content Areas */
+.tab-content {
+    padding: 40px;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Info Tab Grid */
+#informacion {
+    display: none; /* JS will toggle to grid */
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+
+.form-section {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.form-section h2 {
+    margin-bottom: 30px;
+    color: #1fa2b6;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #1fa2b6;
+    box-shadow: 0 0 0 4px rgba(31,162,182,0.1);
+    outline: none;
+}
+
+.btn-primary {
+    background: #1fa2b6;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #178a99;
+    box-shadow: 0 4px 15px rgba(31,162,182,0.3);
+    transform: translateY(-2px);
+}
+
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    height: fit-content;
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.profile-card h3 {
+    color: #333;
+    font-weight: 600;
+}
+
+.profile-card p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 15px;
+}

@@ -1,0 +1,129 @@
+@media(max-width: 768px){
+    .cabecera{
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    /* LAYOUT PRINCIPAL */
+    .hoteles_layout{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .filtrar_resultados{
+        width: 100%;
+    }
+    .lista_hoteles{
+        width: 100%;
+    }
+    .hotel-card{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hotel-card img{
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+    .hotel-info{
+        width: 100%;
+    }
+    .pie-pagina{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    .iconos-redes{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/*Adaptación para Móvil (Máximo 768px)*/
+@media (max-width: 768px) {
+    .checkbtn{
+        display: block;
+        order: 2;
+        z-index: 1003;
+    }
+    .checkbtn {
+        display: block;
+        cursor: pointer;
+        color: #333;
+        font-size: 30px;
+        position: relative; 
+        z-index: 1002;
+    }
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 0;
+        left: -100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease;
+        z-index: 1001; 
+    }
+    nav ul li {
+        margin: 20px 0;
+        list-style: none;
+    }
+    nav ul li a {
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    .contenedor-busqueda {
+        padding: 20px;
+        align-items: center;
+    }
+    .titulo-principal {
+        font-size: 20px;
+        text-align: center;
+    }
+    .formulario-busqueda {
+        width: 100%; 
+    }
+    .contenedor-tarjetas, 
+    .contenedor-beneficios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta-hotel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .seccion-nosotros {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .pie-pagina {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+    .iconos-redes {
+        justify-content: center;
+    }
+}

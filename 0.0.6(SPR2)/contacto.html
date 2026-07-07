@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Contactos</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <header class="cabecera">
+        <div class="logo">
+            <img src="imagenes/logo.jpeg" alt="Logo NocheLista">
+        </div>
+
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="hoteles.html">Hoteles</a></li>
+                <li><a href="app.html">App</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="icono-usuario">
+            <a href="Carp_login/login.html"><img src="imagenes/perfil.png" alt="Perfil Usuario"
+                    style="border-radius: 50%;"></a>
+        </div>
+    </header>
+
+
+    <section id="contacto" class="container my-5 py-5 border-top">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center mb-4">
+                <h2 class="fw-bold">Contáctanos</h2>
+                <p class="text-muted">¿Tienes alguna duda con tu reserva? Escríbenos y te responderemos lo antes
+                    posible.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Pérez" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="tu@correo.com" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu consulta aquí..."
+                            required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5 py-2">Enviar Mensaje</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="pie-pagina">
+        <div class="columna-pie informacion-marca">
+            <img src="imagenes/logo.jpeg" alt="Logo NocheLista">
+            <p class="nombres">Alfredo Fuel, Merchan, Sanches</p>
+            <p class="derechos">2026 Derechos Reservados</p>
+        </div>
+
+        <div class="columna-pie">
+            <h4>Servicio al Cliente</h4>
+            <a href="#">Contáctanos</a>
+            <a href="#">Ayuda/FAQ</a>
+            <a href="#">Soporte experto</a>
+        </div>
+
+        <div class="columna-pie">
+            <h4>Legal</h4>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Política de Privacidad</a>
+        </div>
+
+        <div class="columna-pie redes-sociales">
+            <div class="iconos-redes">
+                <a href="https://wa.me/0000000000" target="_blank">
+                    <img src="imagenes/whatsapp.png" alt="WhatsApp">
+                </a>
+
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="imagenes/instagram.png" alt="Instagram">
+                </a>
+
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img src="imagenes/yotube.png" alt="YouTube">
+                </a>
+
+                <a href="https://twitter.com/" target="_blank">
+                    <img src="imagenes/x.png" alt="Twitter">
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="imagenes/facebook.png" alt="Facebook">
+                </a>
+
+                <a href="https://www.pinterest.com/" target="_blank">
+                    <img src="imagenes/printerest.png" alt="Pinterest">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
