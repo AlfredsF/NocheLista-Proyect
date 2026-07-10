@@ -1,0 +1,54 @@
+# ── Dependencias ─────────────────────────────────────────────
+node_modules/
+
+# ── Archivos sensibles (CLAVES / SECRETOS) ──────────────────
+.env
+.env.*
+!.env.example
+NocheLista/backend/.env
+NocheLista/backend/.env.*
+frontend-react/.env
+frontend-react/.env.*
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# ── Entornos virtuales ──────────────────────────────────────
+venv/
+.venv/
+NocheLista/.venv/
+NocheLista/backend/venv/
+NocheLista/backend/.venv/
+
+# ── Base de datos local ─────────────────────────────────────
+*.sqlite3
+
+# ── Build / dist ────────────────────────────────────────────
+dist/
+frontend-react/dist/
+
+# ── Netlify (estado local del CLI) ──────────────────────────
+.netlify/
+frontend-react/.netlify/
+
+# ── IDE / Editor ────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Sistema operativo ───────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Logs ────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+
+# ── Otros ───────────────────────────────────────────────────
+/docs/

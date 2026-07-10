@@ -1,0 +1,28 @@
+{
+  "name": "nochelista",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node dev.js",
+    "dev:backend": "cd NocheLista\\backend && ..\\.venv\\Scripts\\python.exe manage.py runserver",
+    "dev:frontend": "cd frontend-react && npm run dev",
+    "build": "cd frontend-react && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlfredsF/NocheLista-Proyect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AlfredsF/NocheLista-Proyect/issues"
+  },
+  "homepage": "https://github.com/AlfredsF/NocheLista-Proyect#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}

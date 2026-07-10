@@ -1,0 +1,28 @@
+# Entornos virtuales
+venv/
+.venv/
+env/
+.env/
+
+# Node modules
+node_modules/
+
+# Base de datos
+*.db
+db.sqlite3
+
+# Archivos de Python
+*.pyc
+__pycache__/
+*.log
+*.err
+*.pid
+
+# Archivos sensibles
+backend/.env
+**/.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
