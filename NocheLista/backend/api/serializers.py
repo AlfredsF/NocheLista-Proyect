@@ -7,7 +7,7 @@ class RegisterSerializer(serializers.Serializer):
     password = serializers.CharField(min_length=6, write_only=True)
     nombre_completo = serializers.CharField(max_length=255)
     telefono = serializers.CharField(max_length=20, required=False, allow_blank=True)
-    rol = serializers.ChoiceField(choices=['cliente', 'gestor'])
+    rol = serializers.ChoiceField(choices=['cliente', 'gestor', 'admin'])
 
     def validate_telefono(self, value):
         if value and not re.match(r'^\+?\d{7,15}$', value):

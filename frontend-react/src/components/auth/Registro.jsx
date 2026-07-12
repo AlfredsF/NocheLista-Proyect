@@ -169,6 +169,7 @@ export default function Registro() {
               <select name="rol" value={formData.rol} onChange={handleChange} className="input-select">
                 <option value="cliente">Cliente - Quiero reservar hoteles</option>
                 <option value="gestor">Gestor - Quiero afiliar mi hotel</option>
+                <option value="admin">Admin - Quiero administrar la plataforma</option>
               </select>
             </div>
             <button type="submit">Crear cuenta</button>

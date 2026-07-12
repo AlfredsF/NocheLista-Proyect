@@ -191,8 +191,13 @@ def get_metricas_admin():
     hoteles = supabase.table("hoteles").select("*").execute()
     usuarios = supabase.table("perfiles").select("*").execute()
     reservas = supabase.table("reservas").select("*").execute()
+    solicitudes = supabase.table("solicitudes_afiliacion").select("*").execute()
+    solicitudes_pendientes = sum(1 for s in (solicitudes.data or []) if s.get("estado") == "pendiente")
+    ingresos_totales = sum(r.get("precio_total", 0) for r in (reservas.data or []) if r.get("estado") in ("confirmada", "pagada"))
     return {
         "total_hoteles": len(hoteles.data),
         "total_usuarios": len(usuarios.data),
-        "total_reservas": len(reservas.data)
+        "total_reservas": len(reservas.data),
+        "solicitudes_pendientes": solicitudes_pendientes,
+        "ingresos_totales": ingresos_totales,
     }

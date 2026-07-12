@@ -64,6 +64,15 @@ export default function AdminDashboard() {
               </div>
             </div>
           </div>
+          <div className="col-md-6">
+            <div className="card shadow-sm border-0">
+              <div className="card-body">
+                <h5 className="card-title"><i className="fas fa-tag text-danger me-2"></i>Promociones</h5>
+                <p className="text-muted mb-2">Gestiona las promociones de todos los hoteles</p>
+                <Link to="/admin/promociones" className="btn btn-danger btn-sm">Gestionar</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />

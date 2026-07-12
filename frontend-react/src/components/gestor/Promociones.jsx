@@ -20,7 +20,7 @@ export default function Promociones() {
 
   const getHotelId = async () => {
     if (hotelId) return hotelId;
-    const data = await api.get('/gestor/hotel/').then(r => r.data);
+    const data = await api.get('/gestor/mi-hotel/').then(r => r.data);
     setHotelId(data.id);
     return data.id;
   };

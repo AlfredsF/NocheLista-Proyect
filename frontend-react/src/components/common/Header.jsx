@@ -45,7 +45,10 @@ export default function Header() {
             <li><Link to="/admin" className="nav-link-admin" onClick={() => setMenuOpen(false)}>Admin</Link></li>
           )}
           {rol === 'gestor' && (
-            <li><Link to="/gestor" className="nav-link-gestor" onClick={() => setMenuOpen(false)}>Gestor</Link></li>
+            <>
+              <li><Link to="/gestor" className="nav-link-gestor" onClick={() => setMenuOpen(false)}>Gestor</Link></li>
+              <li><Link to="/gestor/solicitar" onClick={() => setMenuOpen(false)}>Solicitar Afiliación</Link></li>
+            </>
           )}
         </ul>
       </nav>

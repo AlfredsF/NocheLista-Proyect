@@ -10,10 +10,12 @@ import MisReservas from './components/reservas/MisReservas';
 import AdminDashboard from './components/admin/AdminDashboard';
 import Solicitudes from './components/admin/Solicitudes';
 import GestionUsuarios from './components/admin/GestionUsuarios';
+import AdminPromociones from './components/admin/AdminPromociones';
 import HotelDashboard from './components/gestor/HotelDashboard';
 import GestionHotel from './components/gestor/GestionHotel';
 import GestionHabitaciones from './components/gestor/GestionHabitaciones';
 import Promociones from './components/gestor/Promociones';
+import SolicitarAfiliacion from './components/gestor/SolicitarAfiliacion';
 
 export default function App() {
   return (
@@ -64,6 +66,14 @@ export default function App() {
         }
       />
       <Route
+        path="/admin/promociones"
+        element={
+          <PrivateRoute roles={['admin']}>
+            <AdminPromociones />
+          </PrivateRoute>
+        }
+      />
+      <Route
         path="/gestor"
         element={
           <PrivateRoute roles={['gestor']}>
@@ -92,6 +102,14 @@ export default function App() {
         element={
           <PrivateRoute roles={['gestor']}>
             <Promociones />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/gestor/solicitar"
+        element={
+          <PrivateRoute roles={['gestor']}>
+            <SolicitarAfiliacion />
           </PrivateRoute>
         }
       />

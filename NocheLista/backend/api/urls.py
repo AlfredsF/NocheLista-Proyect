@@ -43,4 +43,13 @@ urlpatterns = [
     # Promociones
     path('promociones/', views.PromocionListCreateView.as_view(), name='promocion-list'),
     path('promociones/<str:pk>/', views.PromocionDetailView.as_view(), name='promocion-detail'),
+
+    # Aliases para compatibilidad con el frontend (admin/solicitudes, admin/usuarios, gestor/promociones)
+    path('admin/solicitudes/', views.SolicitudListView.as_view(), name='admin-solicitud-list'),
+    path('admin/solicitudes/crear/', views.SolicitudCreateView.as_view(), name='admin-solicitud-crear'),
+    path('admin/solicitudes/<str:pk>/', views.SolicitudDetailView.as_view(), name='admin-solicitud-detail'),
+    path('admin/usuarios/', views.UsuarioListView.as_view(), name='admin-usuario-list'),
+    path('admin/usuarios/<str:pk>/', views.UsuarioDetailView.as_view(), name='admin-usuario-detail'),
+    path('gestor/promociones/', views.PromocionListCreateView.as_view(), name='gestor-promocion-list'),
+    path('gestor/promociones/<str:pk>/', views.PromocionDetailView.as_view(), name='gestor-promocion-detail'),
 ]
