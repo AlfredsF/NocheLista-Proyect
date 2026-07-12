@@ -293,4 +293,4 @@ Proyecto desarrollado únicamente con fines académicos.
 
 **Gestión de Proyectos de Software (TDSD333)**
 
-**Período Académico 2026-B**
+**Período Académico 2026-A**
